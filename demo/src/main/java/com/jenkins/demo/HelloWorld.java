@@ -1,22 +1,14 @@
 package com.jenkins.demo;
 
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class HelloWorld {
 
-    private int number = 0;
-
-    public HelloWorld() {
-    }
-
-    public HelloWorld(int theNumber) {
-        this.number = theNumber;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public HelloWorld setNumber(int number) {
-        this.number = number;
-        return this;
+    @RequestMapping("/Hello")
+    public String hello() {
+        return "Hello";
     }
 }
